@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная 7</title>
+    <style>
+        body { font-family: Arial; margin: 20px; background: #eee; }
+        section { background: white; padding: 15px; margin: 20px 0; border-radius: 10px; }
+        
+        /* Для z-index */
+        .z-box { width: 100px; height: 70px; position: absolute; padding: 10px; color: white; }
+        .z1 { background: red; top: 0; left: 0; z-index: 1; }
+        .z2 { background: blue; top: 30px; left: 30px; z-index: 3; }
+        .z3 { background: green; top: 60px; left: 60px; z-index: 2; }
+        .z-wrap { position: relative; height: 150px; }
+        
+        /* clamp */
+        .clamp { font-size: clamp(1rem, 4vw, 2rem); background: yellow; padding: 10px; }
+        
+        /* position */
+        .pos-box { width: 130px; height: 80px; border: 2px solid black; padding: 10px; margin: 10px; background: lightblue; }
+        .rel { position: relative; top: 10px; left: 10px; background: lightgreen; }
+        .abs { position: absolute; top: 20px; left: 20px; background: pink; width: 100px; }
+        .fix { position: fixed; bottom: 10px; right: 10px; background: orange; width: 100px; }
+        
+        /* flexbox */
+        .flex { display: flex; gap: 10px; background: #ddd; padding: 10px; }
+        .flex > div { background: coral; padding: 20px; flex: 1; }
+        
+        /* grid */
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: #ccc; padding: 10px; }
+        .grid > div { background: purple; color: white; padding: 20px; }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h2>z-index</h2>
+        <div class="z-wrap">
+            <div class="z-box z1">1</div>
+            <div class="z-box z2">2 (выше)</div>
+            <div class="z-box z3">3</div>
+        </div>
+        <h2>clamp()</h2>
+        <div class="clamp">Размер меняется</div>
+    </section>
+
+    <!-- 2. position на 4 блоках -->
+    <section>
+        <h2>position</h2>
+        <div class="pos-box">static</div>
+        <div class="pos-box rel">relative</div>
+        <div style="position: relative; height: 80px;">
+            <div class="pos-box abs">absolute</div>
+        </div>
+        <div class="pos-box fix">fixed</div>
+    </section>
+
+    <section>
+        <h2>Flexbox</h2>
+        <div class="flex">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Grid</h2>
+        <div class="grid">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+        <p>Свойства grid-контейнера: display:grid, grid-template-columns, gap<br>
+        Свойства grid-элементов: прямые потомки контейнера</p>
+    </section>
+
+</body>
+</html>
+</html>
